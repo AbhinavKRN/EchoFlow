@@ -1,0 +1,110 @@
+/* App-specific styles that complement Tailwind */
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Focus outline styles */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}
+
+/* Animation classes */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+/* Loading animation */
+.loading-wave {
+  @apply flex gap-1 items-center;
+}
+
+.loading-wave div {
+  @apply w-1 h-4 bg-blue-500 rounded-full;
+  animation: wave 1s infinite;
+}
+
+.loading-wave div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-wave div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+/* Audio player custom styles */
+.audio-player {
+  @apply rounded-lg bg-white dark:bg-gray-800 shadow-sm;
+}
+
+.audio-player .progress-bar {
+  @apply h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.audio-player .progress {
+  @apply h-full bg-blue-500 transition-all duration-100;
+}
+
+/* File upload zone */
+.upload-zone {
+  @apply border-2 border-dashed rounded-lg p-6 transition-colors;
+}
+
+.upload-zone.dragging {
+  @apply border-blue-500 bg-blue-50 dark:bg-blue-900/20;
+}
+
+/* Custom utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
